@@ -7,7 +7,7 @@ INTERMISSION card), rise again, and the window glides back to its seat.
 
 Everything is drawn and synthesized procedurally — no image or sound assets.
 
-[!vaudeville.gif]()
+![demo of vaudeville](vaudeville.gif)
 
 ## Run it
 
