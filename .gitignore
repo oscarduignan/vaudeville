@@ -1,0 +1,5 @@
+.build/
+.devbox/
+preview/
+dist/
+.DS_Store

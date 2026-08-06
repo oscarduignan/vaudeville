@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.5/.schema/devbox.schema.json",
+  "packages": [],
+  "shell": {
+    "init_hook": [
+      "test -d \"$(xcode-select -p 2>/dev/null)\" || echo 'vaudeville needs the Xcode Command Line Tools: run `xcode-select --install`'"
+    ],
+    "scripts": {
+      "build": [
+        "unset SDKROOT DEVELOPER_DIR",
+        "swift build -c release"
+      ],
+      "show": [
+        "unset SDKROOT DEVELOPER_DIR",
+        "swift build -c release",
+        "./.build/release/vaudeville \"$@\""
+      ],
+      "preview": [
+        "unset SDKROOT DEVELOPER_DIR",
+        "swift build -c release",
+        "./.build/release/vaudeville --preview ./preview && echo 'wrote ./preview/hook.png and ./preview/curtain.png'"
+      ],
+      "package": [
+        "unset SDKROOT DEVELOPER_DIR",
+        "swift build -c release",
+        "bash scripts/package.sh"
+      ],
+      "clean": [
+        "rm -rf .build preview dist"
+      ]
+    }
+  }
+}
